@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mentalhealthapp/pages/LoginPage.dart';
 import 'package:mentalhealthapp/utill/emoticon_face.dart';
-
 import 'package:mentalhealthapp/utill/list_execises.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +13,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final  _searchController=TextEditingController();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration(seconds: 20),() {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loginPage()));
 
+    },);
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
