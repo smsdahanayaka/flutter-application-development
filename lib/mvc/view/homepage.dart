@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mentalhealthapp/pages/LoginPage.dart';
 import 'package:mentalhealthapp/utill/emoticon_face.dart';
 import 'package:mentalhealthapp/utill/list_execises.dart';
+import 'LoginPage.dart';
+import 'userPage.dart';
+
 
 class HomePage extends StatefulWidget {
 
@@ -17,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 20),() {
+    Future.delayed(Duration(seconds:20),() {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loginPage()));
 
     },);
@@ -25,10 +27,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: const [
+      bottomNavigationBar: BottomNavigationBar(items:  [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: "home"),
         BottomNavigationBarItem(icon: Icon(Icons.message),label: "home"),
-        BottomNavigationBarItem(icon: Icon(Icons.person),label: "home")
+        BottomNavigationBarItem(icon: IconButton(onPressed: (){
+          Navigator.push(context,MaterialPageRoute(builder: (context) => Demo(),));
+        }, icon:Icon(Icons.person)),label: "Users")
       ]),
      backgroundColor: Colors.blue[900],
       body: SafeArea(

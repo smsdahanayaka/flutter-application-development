@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentalhealthapp/pages/LoginPage.dart';
+import 'package:mentalhealthapp/mvc/view/LoginPage.dart';
+
 
 
 void main() {
